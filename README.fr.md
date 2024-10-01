@@ -113,6 +113,7 @@ Si vous avez besoin des fonctionnalités suivantes, veuillez installer à partir
 2. Après extraction, double-cliquez sur `OneKeyStart.bat` dans le dossier
 
 3. Dans la fenêtre du navigateur qui s'ouvre, configurez les paramètres nécessaires dans la barre latérale, puis créez votre vidéo en un clic !
+   
   ![attentionen](https://github.com/user-attachments/assets/9ff9d8e1-5422-466f-9e28-1803f23afdc7)
 
 > 💡 Remarque : Ce projet nécessite la configuration de grands modèles linguistiques, WhisperX et TTS. Veuillez lire attentivement la section **Préparation de l'API** ci-dessous
@@ -302,9 +303,9 @@ Quelques connaissances en Python sont nécessaires. Supporte Win, Mac, Linux. Si
    Veuillez télécharger manuellement le modèle Belle-whisper-large-v3-zh-punct ([Lien Baidu](https://pan.baidu.com/s/1NyNtkEM0EMsjdCovncsx0w?pwd=938n)) et le remplacer dans le dossier `_model_cache` à la racine du projet.
 
 6. 🎉 Entrez la commande ou cliquez sur `OneKeyStart.bat` pour lancer l'application Streamlit :
-  ```bash
-   streamlit run st.py
-   ```
+   ```bash
+    streamlit run st.py
+    ```
 
 7. Définissez la clé dans la barre latérale de la page web qui s'ouvre, et assurez-vous de sélectionner la méthode whisper.
 
