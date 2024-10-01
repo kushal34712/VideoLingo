@@ -295,6 +295,61 @@ Quelques connaissances en Python sont nécessaires. Supporte Win, Mac, Linux. Si
    ```bash
    python install.py
    ```
+   Suivez les instructions pour sélectionner la méthode Whisper souhaitée, le script installera automatiquement les versions correspondantes de torch et whisper.
+
+5. Uniquement pour les utilisateurs qui ont besoin de la transcription en chinois :
+
+   Veuillez télécharger manuellement le modèle Belle-whisper-large-v3-zh-punct ([Lien Baidu](https://pan.baidu.com/s/1NyNtkEM0EMsjdCovncsx0w?pwd=938n)) et le remplacer dans le dossier `_model_cache` à la racine du projet.
+
+6. 🎉 Entrez la commande ou cliquez sur `OneKeyStart.bat` pour lancer l'application Streamlit :
+  
+
+7. Définissez la clé dans la barre latérale de la page web qui s'ouvre, et assurez-vous de sélectionner la méthode whisper.
+
+   ![attentionen](https://github.com/user-attachments/assets/9ff9d8e1-5422-466f-9e28-1803f23afdc7)
+
+8. (Optionnel) Des paramètres plus avancés peuvent être modifiés manuellement dans `config.py`.
+
+<!-- Ce projet utilise un développement modulaire structuré. Vous pouvez exécuter les fichiers `core\step__.py` dans l'ordre. Documentation technique : [Chinois](./docs/README_guide_zh.md) | [Anglais](./docs/README_guide_en.md) (À mettre à jour) -->
+
+## ⚠️ Précautions
+
+1. UVR5 a des exigences élevées en matière de mémoire. 16 Go de RAM peuvent traiter jusqu'à 30 minutes, 32 Go de RAM peuvent traiter jusqu'à 50 minutes. Veuillez faire attention aux longues vidéos.
+   
+2. Il y a une très faible probabilité d'erreurs de 'phrases' lors de l'étape de traduction. Si vous en rencontrez, merci de nous en informer.
+   
+3. La qualité de la fonction de doublage est instable. Pour une meilleure qualité, essayez de choisir une vitesse TTS adaptée à la vidéo originale. Par exemple, la vitesse de OAITTS est relativement rapide, tandis que pour FishTTS, veuillez écouter des échantillons avant de faire votre choix.
+
+## 📄 Licence
+
+Ce projet est sous licence Apache 2.0. Lorsque vous utilisez ce projet, veuillez suivre ces règles :
+
+1. Lors de la publication de travaux, il est **recommandé (mais non obligatoire) de créditer VideoLingo pour la génération de sous-titres**.
+2. Suivez les termes des modèles de langage large et des TTS utilisés pour une attribution correcte.
+3. Si vous copiez le code, veuillez inclure l'intégralité de la licence Apache 2.0.
+
+Nous remercions sincèrement les projets open-source suivants pour leurs contributions, qui ont fourni un soutien important au développement de VideoLingo :
+
+- [whisperX](https://github.com/m-bain/whisperX)
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+- [json_repair](https://github.com/mangiucugna/json_repair)
+- [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS)
+- [BELLE](https://github.com/LianjiaTech/BELLE)
+
+## 📬 Contactez-nous
+
+- Rejoignez notre groupe QQ : 875297969
+- Soumettez [Issues](https://github.com/Huanshere/VideoLingo/issues) ou des [Pull Requests](https://github.com/Huanshere/VideoLingo/pulls) sur GitHub.
+
+
+## ⭐ Historique des Stars
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Huanshere/VideoLingo&type=Timeline)](https://star-history.com/#Huanshere/VideoLingo&Timeline)
+
+---
+
+<p align="center">Si vous trouvez VideoLingo utile, n'hésitez pas à nous donner une ⭐️!</p>
+
 
 
 
