@@ -95,5 +95,144 @@
     ### Notes importantes :
     
     1. Le package intégré utilise la version CPU de torch, d'une taille d'environ **2,6G**.
-    2. Lors de l'utilisation de UVR5 pour la séparation des voix dans l'étape de
+    2. Lors de l'utilisation de UVR5 pour la séparation des voix dans l'étape devoix, la version CPU sera nettement plus lente que torch avec accélération GPU.
+3. Le package intégré **ne supporte que l'appel à whisperXapi ☁️ via API**, et ne supporte pas l'exécution locale de whisperX 💻.
+4. Le whisperXapi utilisé dans le package intégré ne supporte pas la transcription en chinois. Si vous avez besoin d'utiliser le chinois, veuillez installer à partir du code source et utiliser whisperX localement 💻.
+5. Le package intégré n'a pas encore effectué la séparation des voix UVR5 dans l'étape de transcription, il n'est donc pas recommandé d'utiliser des vidéos avec une musique de fond bruyante.
+
+Si vous avez besoin des fonctionnalités suivantes, veuillez installer à partir du code source (nécessite un GPU Nvidia et au moins **20G** d'espace disque) :
+- La langue d'entrée est le chinois
+- Exécuter whisperX localement 💻
+- Utiliser UVR5 accéléré par GPU pour la séparation des voix
+- Transcrire des vidéos avec une musique de fond bruyante
+
+### Instructions de téléchargement et d'utilisation
+
+1. Téléchargez le package en un clic `v1.4` (800 Mo) : [Téléchargement direct](https://vip.123pan.cn/1817874751/8209290) | [Sauvegarde Baidu](https://pan.baidu.com/s/1H_3PthZ3R3NsjS0vrymimg?pwd=ra64)
+
+2. Après extraction, double-cliquez sur `OneKeyStart.bat` dans le dossier
+
+3. Dans la fenêtre du navigateur qui s'ouvre, configurez les paramètres nécessaires dans la barre latérale, puis créez votre vidéo en un clic !
+  ![attentionen](https://github.com/user-attachments/assets/9ff9d8e1-5422-466f-9e28-1803f23afdc7)
+
+> 💡 Remarque : Ce projet nécessite la configuration de grands modèles linguistiques, WhisperX et TTS. Veuillez lire attentivement la section **Préparation de l'API** ci-dessous
+
+## 📋 Préparation de l'API
+Ce projet nécessite l'utilisation de grands modèles linguistiques, WhisperX et TTS. Plusieurs options sont fournies pour chaque composant. **Veuillez lire attentivement le guide de configuration 😊**
+### 1. **Obtenez une API_KEY pour les grands modèles linguistiques** :
+
+| Modèle recommandé | Fournisseur recommandé | base_url | Prix | Efficacité |
+|:-----|:---------|:---------|:-----|:---------|
+| claude-3-5-sonnet-20240620 (par défaut) | [Yunwu API](https://yunwu.zeabur.app/register?aff=TXMB) | https://yunwu.zeabur.app | ¥15 / 1M tokens | 🤩 |
+| deepseek-coder | [deepseek](https://platform.deepseek.com/api_keys) | https://api.deepseek.com | ¥2 / 1M tokens | 😲 |
+> Remarque : L'API Yunwu supporte également l'interface tts-1 d'OpenAI, qui peut être utilisée lors de l'étape de doublage.
+
+> Rappel : deepseek a une très faible probabilité d'erreurs lors de la traduction. En cas d'erreurs, veuillez passer au modèle claude 3.5 sonnet.
+
+#### Questions fréquentes
+
+<details>
+<summary>Quel modèle dois-je choisir ?</summary>
+
+- 🌟 Utilisation par défaut de Claude 3.5, excellente qualité de traduction, très bonne cohérence, sans saveur IA.
+- 🚀 Si vous utilisez deepseek, la traduction d'une vidéo d'une heure coûte environ ¥1, avec des résultats moyens.
+</details>
+
+<details>
+<summary>Comment obtenir une clé API ?</summary>
+
+1. Cliquez sur le lien du fournisseur recommandé ci-dessus
+2. Créez un compte et rechargez-le
+3. Créez une nouvelle clé API sur la page des clés API
+4. Pour l'API Yunwu, assurez-vous de vérifier `Quota illimité`, sélectionnez le modèle `claude-3-5-sonnet-20240620`, et il est recommandé de choisir le canal `Pure AZ 1.5x`.
+</details>
+
+<details>
+<summary>Puis-je utiliser d'autres modèles ?</summary>
+
+- ✅ Supporte les interfaces d'API similaires à OAI, mais vous devez les changer vous-même dans la barre latérale de Streamlit.
+- ⚠️ Cependant, d'autres modèles (en particulier les petits modèles) ont une faible capacité à suivre les instructions et sont très susceptibles de signaler des erreurs lors de la traduction, ce qui est fortement déconseillé.
+</details>
+
+### 2. **Préparer un token Replicate** (uniquement en utilisant whisperXapi ☁️)
+
+VideoLingo utilise WhisperX pour la reconnaissance vocale, supportant à la fois le déploiement local et l'API cloud.
+#### Comparaison des options :
+| Option | Inconvénients |
+|:-----|:-----|
+| **whisperX 🖥️** | • Installation de CUDA 🛠️<br>• Téléchargement du modèle 📥<br>• Exigence de haute VRAM 💾 |
+| **whisperXapi ☁️** | • Nécessite un VPN 🕵️‍♂️<br>• Carte Visa 💳<br>• **Mauvais effet sur le chinois** 🚫 |
+
+#### Obtenir le token
+   - Inscrivez-vous sur [Replicate](https://replicate.com/account/api-tokens), liez un moyen de paiement par carte Visa, et obtenez le token
+   - **Ou rejoignez le groupe QQ pour obtenir un token de test gratuit dans l'annonce du groupe**
+
+### 3. **API TTS**
+VideoLingo propose plusieurs méthodes d'intégration TTS. Voici une comparaison (sautez cette étape si vous ne faites que traduire sans doublage) :
+
+| Option TTS | Avantages | Inconvénients | Effet en chinois | Effet en langues non-chinoises |
+|:---------|:-----|:-----|:---------|:-----------|
+| 🎙️ OpenAI TTS | Émotions réalistes | Le chinois sonne comme un étranger | 😕 | 🤩 |
+| 🔊 Azure TTS  | Effet naturel | Recharge peu pratique | 🤩 | 😃 |
+| 🎤 Fish TTS (recommandé) | Excellent | Nécessite une recharge | 😱 | 😱 |
+| 🗣️ GPT-SoVITS (bêta) | Clonage vocal local | Actuellement supporte uniquement l'entrée en anglais avec sortie en chinois, nécessite un GPU pour l'inférence du modèle, idéal pour des vidéos mono-personnes sans BGM évidente, et le modèle de base doit être proche de la voix d'origine | 😂 | 🚫 |
+
+- Pour OpenAI TTS, nous recommandons d'utiliser [Yunwu API](https://yunwu.zeabur.app/register?aff=TXMB);
+- **Les clés gratuites Azure TTS peuvent être obtenues dans l'annonce du groupe QQ** ou vous pouvez vous inscrire et recharger vous-même sur le [site officiel](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/get-started-text-to-speech?tabs=windows%2Cterminal&pivots=programming-language-python);
+- **Les clés gratuites Fish TTS peuvent être obtenues dans l'annonce du groupe QQ** ou vous pouvez vous inscrire et recharger vous-même sur le [site officiel](https://fish.audio/zh-CN/go-api/)
+
+<details>
+<summary>Comment choisir une voix OpenAI ?</summary>
+
+Vous pouvez trouver la liste des voix sur le [site officiel](https://platform.openai.com/docs/guides/text-to-speech/voice-options), telles que `alloy`, `echo`, `nova`, et `fable`. Modifiez `OAI_VOICE` dans `config.py` pour changer la voix.
+
+</details>
+
+<details>
+<summary>Comment choisir une voix Azure ?</summary>
+
+Il est recommandé d'écouter et de choisir la voix souhaitée dans l'[expérience en ligne](https://speech.microsoft.com/portal/voicegallery), et de trouver le code correspondant pour cette voix dans le code à droite, tel que `zh-CN-XiaoxiaoMultilingualNeural`.
+
+</details>
+
+<details>
+<summary>Comment choisir une voix Fish TTS ?</summary>
+
+Rendez-vous sur le [site officiel](https://fish.audio/zh-CN/) pour écouter et choisir la voix souhaitée, et trouvez le code correspondant pour cette voix dans l'URL, comme Ding Zhen est `54a5170264694bfc8e9ad98df7bd89c3`. Les voix populaires ont été ajoutées à `config.py`, modifiez simplement `FISH_TTS_CHARACTER`. Si vous devez utiliser d'autres voix, veuillez modifier le dictionnaire `FISH_TTS_CHARACTER_ID_DICT` dans `config.py`.
+
+</details>
+
+<details>
+<summary>Tutoriel d'utilisation de GPT-SoVITS-v2</summary>
+
+1. Consultez le document Yuque [officiel](https://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e/dkxgpiy9zb96hob4#KTvnO) pour vérifier les exigences de configuration et télécharger le package intégré.
+
+2. Placez `GPT-SoVITS-v2-xxx` au même niveau que le répertoire de `VideoLingo`. **Notez qu'ils doivent être des dossiers parallèles.**
+
+3. Choisissez l'une des méthodes suivantes pour configurer le modèle :
+
+   a. Modèle auto-entraîné :
+   - Après l'entraînement du modèle, `tts_infer.yaml` sous `GPT-SoVITS-v2-xxx\GPT_SoVITS\configs` sera automatiquement rempli avec l'adresse de votre modèle. Copiez et renommez-le en `nom_personnage_anglais_voulu.yaml`
+   - Dans le même répertoire que le fichier `yaml`, placez l'audio de référence que vous utiliserez plus tard, nommé `nom_personnage_anglais_voulu_texte_contenu_audio.wav` ou `.mp3`, par exemple `Huanyuv2_Hello, this is a test audio.wav`
+   - Dans la barre latérale de la page web VideoLingo, définissez `GPT-SoVITS Character` sur `nom_personnage_anglais_voulu`.
+
+   b. Utilisation du modèle pré-entraîné :
+   - Téléchargez mon modèle depuis [ici](https://vip.123pan.cn/1817874751/8137723), extrayez-le et écrasez-le dans `GPT-SoVITS-v2-xxx`.
+   - Définissez `GPT-SoVITS Character` sur `Huanyuv2`.
+
+   c. Utilisation d'autres modèles entraînés :
+   - Placez le fichier de modèle `xxx.ckpt` dans le dossier `GPT_weights_v2` et le fichier modèle `xxx.pth` dans le dossier `SoVITS_weights_v2`.
+   - Référez-vous à la méthode a, renommez le fichier `tts_infer.yaml` et modifiez le `t2s_weights_path` et `vits_weights_path` dans la section `custom` du fichier pour pointer vers vos modèles, par exemple :
+  
+      ```yaml
+      # Exemple de configuration pour la méthode b :
+      t2s_weights_path: GPT_weights_v2/Huanyu_v2-e10.ckpt
+      version: v2
+      vits_weights_path: SoVITS_weights_v2/Huanyu_v2_e10_s150.pth
+      ```
+   - Référez-vous à la méthode a, placez l'audio de référence que vous utiliserez plus tard dans le même répertoire que le fichier `yaml`, nommé `nom_personnage_anglais_voulu_texte_contenu_audio.wav` ou `.mp3`, par exemple `Huanyuv2_Hello, this is a test audio.wav`. Le programme le reconnaîtra et l'utilisera automatiquement.
+   - ⚠️ Avertissement : **Veuillez utiliser l'anglais pour nommer le `nom_personnage`**, sinon des erreurs se produiront. Le `texte_contenu_audio` peut être en chinois. Il est toujours en version bêta et peut produire des erreurs.
+
+
+
     
