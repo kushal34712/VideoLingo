@@ -233,6 +233,69 @@ Rendez-vous sur le [site officiel](https://fish.audio/zh-CN/) pour écouter et c
    - Référez-vous à la méthode a, placez l'audio de référence que vous utiliserez plus tard dans le même répertoire que le fichier `yaml`, nommé `nom_personnage_anglais_voulu_texte_contenu_audio.wav` ou `.mp3`, par exemple `Huanyuv2_Hello, this is a test audio.wav`. Le programme le reconnaîtra et l'utilisera automatiquement.
    - ⚠️ Avertissement : **Veuillez utiliser l'anglais pour nommer le `nom_personnage`**, sinon des erreurs se produiront. Le `texte_contenu_audio` peut être en chinois. Il est toujours en version bêta et peut produire des erreurs.
 
+ ```
+   # Structure de répertoire attendue :
+   .
+   ├── VideoLingo
+   │   └── ...
+   └── GPT-SoVITS-v2-xxx
+       ├── GPT_SoVITS
+       │   └── configs
+       │       ├── tts_infer.yaml
+       │       ├── nom_personnage_anglais_voulu.yaml
+       │       └── nom_personnage_anglais_voulu_texte_contenu_audio_de_reference.wav
+       ├── GPT_weights_v2
+       │   └── [Votre fichier modèle GPT]
+       └── SoVITS_weights_v2
+           └── [Votre fichier modèle SoVITS]
+
+ ```
+
+
+     
+Après la configuration, assurez-vous de sélectionner le `Mode Audio de Référence` dans la barre latérale de la page web. VideoLingo ouvrira automatiquement le port API d'inférence de GPT-SoVITS dans la ligne de commande pop-up lors de l'étape de doublage. Vous pouvez le fermer manuellement une fois le doublage terminé. Notez que cette méthode n'est toujours pas très stable et peut entraîner des mots ou des phrases manquants, ainsi que d'autres bugs, donc utilisez-la avec précaution.</details>
+
+## 🛠️ Processus d'installation du code source
+
+### Prérequis pour Windows
+
+Avant de commencer l'installation de VideoLingo, assurez-vous d'avoir **20G** d'espace disque libre et complétez les étapes suivantes :
+
+| Dépendance | whisperX 🖥️ | whisperX ☁️ |
+|:-----|:-------------------|:----------------|
+| Anaconda 🐍 | [Télécharger](https://www.anaconda.com/products/distribution#download-section) | [Télécharger](https://www.anaconda.com/products/distribution#download-section) |
+| Git 🌿 | [Télécharger](https://git-scm.com/download/win) | [Télécharger](https://git-scm.com/download/win) |
+| Cuda Toolkit 12.6 🚀 | [Télécharger](https://developer.download.nvidia.com/compute/cuda/12.6.0/local_installers/cuda_12.6.0_560.76_windows.exe) | - |
+| Cudnn 9.3.0 🧠 | [Télécharger](https://developer.download.nvidia.com/compute/cudnn/9.3.0/local_installers/cudnn_9.3.0_windows.exe) | - |
+
+> Remarque : Lors de l'installation d'Anaconda, cochez "Ajouter au chemin système", et redémarrez votre ordinateur après l'installation 🔄
+
+### Étapes d'installation
+
+Quelques connaissances en Python sont nécessaires. Supporte Win, Mac, Linux. Si vous rencontrez des problèmes, vous pouvez demander à GPT tout au long du processus~
+
+1. Ouvrir l'invite Anaconda et passer au répertoire du bureau :
+   ```bash
+   cd desktop
+   ```
+
+2. Cloner le projet et passer au répertoire du projet :
+   ```bash
+   git clone https://github.com/Huanshere/VideoLingo.git
+   cd VideoLingo
+   ```
+
+3. Créer et activer l'environnement virtuel (**doit être 3.10.0**) :
+   ```bash
+   conda create -n videolingo python=3.10.0 -y
+   conda activate videolingo
+   ```
+
+4. Exécuter le script d'installation :
+   ```bash
+   python install.py
+   ```
+
 
 
     
