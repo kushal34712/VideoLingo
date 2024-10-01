@@ -302,7 +302,9 @@ Quelques connaissances en Python sont nécessaires. Supporte Win, Mac, Linux. Si
    Veuillez télécharger manuellement le modèle Belle-whisper-large-v3-zh-punct ([Lien Baidu](https://pan.baidu.com/s/1NyNtkEM0EMsjdCovncsx0w?pwd=938n)) et le remplacer dans le dossier `_model_cache` à la racine du projet.
 
 6. 🎉 Entrez la commande ou cliquez sur `OneKeyStart.bat` pour lancer l'application Streamlit :
-  
+  ```bash
+   streamlit run st.py
+   ```
 
 7. Définissez la clé dans la barre latérale de la page web qui s'ouvre, et assurez-vous de sélectionner la méthode whisper.
 
