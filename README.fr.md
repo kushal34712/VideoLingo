@@ -1,30 +1,30 @@
-<div align="center">
 
-    # VideoLingo : Connecter le monde, image par image
-    <p align="center">
+
+# VideoLingo : Connecter le monde, image par image
+<p align="center">
       <a href="https://www.python.org" target="_blank"><img src="https://img.shields.io/badge/Python-3.10-blue.svg" alt="Python"></a>
       <a href="https://github.com/Huanshere/VideoLingo/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Huanshere/VideoLingo.svg" alt="License"></a>
       <a href="https://github.com/Huanshere/VideoLingo/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/Huanshere/VideoLingo.svg" alt="GitHub stars"></a>
     </p>
     
-    [**中文**](README.md) | [**English**](README.en.md)｜[**日本語**](README.ja.md)
+[**中文**](README.md) | [**English**](README.en.md)｜[**日本語**](README.ja.md)
     
-    **Groupe QQ : 875297969**
+**Groupe QQ : 875297969**
     
-    </div>
+</div>
     
-    ## 🌟 Introduction au projet
+ ## 🌟 Introduction au projet
     
-    VideoLingo est un outil tout-en-un de traduction et de doublage pour vidéos, visant à produire des sous-titres de qualité Netflix, à éliminer les traductions mécaniques rigides et les sous-titres sur plusieurs lignes, tout en ajoutant un doublage de haute qualité. Il permet de partager des connaissances au-delà des barrières linguistiques à travers le monde. Grâce à une interface web intuitive Streamlit, vous pouvez accomplir tout le processus, depuis le lien vidéo jusqu'à l'intégration de sous-titres bilingues de haute qualité et même le doublage, en quelques clics, créant facilement des vidéos localisées de qualité Netflix.
+ VideoLingo est un outil tout-en-un de traduction et de doublage pour vidéos, visant à produire des sous-titres de qualité Netflix, à éliminer les traductions mécaniques rigides et les sous-titres sur plusieurs lignes, tout en ajoutant un doublage de haute qualité. Il permet de partager des connaissances au-delà des barrières linguistiques à travers le monde. Grâce à une interface web intuitive Streamlit, vous pouvez accomplir tout le processus, depuis le lien vidéo jusqu'à l'intégration de sous-titres bilingues de haute qualité et même le doublage, en quelques clics, créant facilement des vidéos localisées de qualité Netflix.
     
-    Caractéristiques principales et fonctionnalités :
+ Caractéristiques principales et fonctionnalités :
     - 🎥 Utilise yt-dlp pour télécharger des vidéos depuis des liens YouTube
     
-    - 🎙️ Utilise WhisperX pour une reconnaissance des sous-titres au niveau des mots
+   - 🎙️ Utilise WhisperX pour une reconnaissance des sous-titres au niveau des mots
     
-    - **📝 Utilise le NLP et GPT pour segmenter les sous-titres en fonction du sens des phrases**
+- **📝 Utilise le NLP et GPT pour segmenter les sous-titres en fonction du sens des phrases**
     
-    - **📚 GPT résume et extrait une base de connaissances terminologiques pour une traduction contextualisée**
+- **📚 GPT résume et extrait une base de connaissances terminologiques pour une traduction contextualisée**
     
     - **🔄 Traduction en trois étapes (directe, réflexion et paraphrase), rivalisant avec la qualité de traduction professionnelle**
     
