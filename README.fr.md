@@ -26,21 +26,21 @@
     
 - **📚 GPT résume et extrait une base de connaissances terminologiques pour une traduction contextualisée**
     
-    - **🔄 Traduction en trois étapes (directe, réflexion et paraphrase), rivalisant avec la qualité de traduction professionnelle**
+- **🔄 Traduction en trois étapes (directe, réflexion et paraphrase), rivalisant avec la qualité de traduction professionnelle**
     
-    - **✅ Vérifie la longueur d'une seule ligne selon les normes Netflix, évitant strictement les sous-titres en double ligne**
+- **✅ Vérifie la longueur d'une seule ligne selon les normes Netflix, évitant strictement les sous-titres en double ligne**
     
-    - **🗣️ Utilise des méthodes comme GPT-SoVITS pour un doublage aligné de haute qualité**
+- **🗣️ Utilise des méthodes comme GPT-SoVITS pour un doublage aligné de haute qualité**
     
-    - 🚀 Lancement d'un package intégré en un clic, production de vidéos en un clic via Streamlit
+- 🚀 Lancement d'un package intégré en un clic, production de vidéos en un clic via Streamlit
     
-    - 📝 Journalisation détaillée de chaque étape d'opération, avec support de reprise en cas d'interruption
+- 📝 Journalisation détaillée de chaque étape d'opération, avec support de reprise en cas d'interruption
     
-    - 🌐 Support multilingue complet, permettant une localisation vidéo dans plusieurs langues
+- 🌐 Support multilingue complet, permettant une localisation vidéo dans plusieurs langues
     
-    ## 🎥 Démonstration
+  ## 🎥 Démonstration
     
-    <table>
+  <table>
     <tr>
     <td width="25%">
     
