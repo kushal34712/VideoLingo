@@ -38,46 +38,46 @@
     
 - 🌐 Support multilingue complet, permettant une localisation vidéo dans plusieurs langues
     
-  ## 🎥 Démonstration
+## 🎥 Démonstration
     
   <table>
     <tr>
     <td width="25%">
     
-    ### Traduction russe
-    ---
-    https://github.com/user-attachments/assets/25264b5b-6931-4d39-948c-5a1e4ce42fa7
+### Traduction russe
+---
+https://github.com/user-attachments/assets/25264b5b-6931-4d39-948c-5a1e4ce42fa7
     
-    </td>
+</td>
     <td width="25%">
     
-    ### GPT-SoVITS
-    ---
-    https://github.com/user-attachments/assets/47d965b2-b4ab-4a0b-9d08-b49a7bf3508c
+### GPT-SoVITS
+ ---
+https://github.com/user-attachments/assets/47d965b2-b4ab-4a0b-9d08-b49a7bf3508c
     
-    </td>
+</td>
     <td width="25%">
     
-    ### Fish TTS Ding Zhen
-    ---
-    https://github.com/user-attachments/assets/e7bb9090-d2ef-4261-9dc5-56bd67dc710d
+ ### Fish TTS Ding Zhen
+ ---
+ https://github.com/user-attachments/assets/e7bb9090-d2ef-4261-9dc5-56bd67dc710d
     
-    </td>
+ </td>
     <td width="25%">
     
-    ### OAITTS
-    ---
-    https://github.com/user-attachments/assets/85c64f8c-06cf-4af9-b153-ee9d2897b768
+### OAITTS
+---
+https://github.com/user-attachments/assets/85c64f8c-06cf-4af9-b153-ee9d2897b768
     
-    </td>
+   </td>
     </tr>
     </table>
     
-    ### Support linguistique :
+### Support linguistique :
     
-    Langues d'entrée actuellement supportées et exemples :
+Langues d'entrée actuellement supportées et exemples :
     
-    | Langue d'entrée | Niveau de support | Démo de traduction | Démo de doublage |
+| Langue d'entrée | Niveau de support | Démo de traduction | Démo de doublage |
     |----------------|-------------------|--------------------|------------------|
     | Anglais | 🤩 | [Anglais vers chinois](https://github.com/user-attachments/assets/127373bb-c152-4b7a-8d9d-e586b2c62b4b) | À venir |
     | Russe | 😊 | [Russe vers chinois](https://github.com/user-attachments/assets/25264b5b-6931-4d39-948c-5a1e4ce42fa7) | À venir |
@@ -89,12 +89,12 @@
     | Chinois* | 🤩 | [Chinois vers anglais](https://github.com/user-attachments/assets/48f746fe-96ff-47fd-bd23-59e9202b495c) | [Talk-show du professeur Luo Xiang](https://github.com/user-attachments/assets/85c64f8c-06cf-4af9-b153-ee9d2897b768) |
     > *Le chinois nécessite une configuration séparée du modèle whisperX, voir l'installation à partir du code source
     
-    Le support des langues de traduction couvre toutes les langues gérées par le grand modèle linguistique, tandis que le support des langues pour le doublage dépend de la méthode TTS choisie.
+Le support des langues de traduction couvre toutes les langues gérées par le grand modèle linguistique, tandis que le support des langues pour le doublage dépend de la méthode TTS choisie.
     ## 🚀 Package intégré en un clic pour Windows
     
-    ### Notes importantes :
+### Notes importantes :
     
-    1. Le package intégré utilise la version CPU de torch, d'une taille d'environ **2,6G**.
+1. Le package intégré utilise la version CPU de torch, d'une taille d'environ **2,6G**.
     2. Lors de l'utilisation de UVR5 pour la séparation des voix dans l'étape devoix, la version CPU sera nettement plus lente que torch avec accélération GPU.
 3. Le package intégré **ne supporte que l'appel à whisperXapi ☁️ via API**, et ne supporte pas l'exécution locale de whisperX 💻.
 4. Le whisperXapi utilisé dans le package intégré ne supporte pas la transcription en chinois. Si vous avez besoin d'utiliser le chinois, veuillez installer à partir du code source et utiliser whisperX localement 💻.
