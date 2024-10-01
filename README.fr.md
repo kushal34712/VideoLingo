@@ -78,15 +78,15 @@ https://github.com/user-attachments/assets/85c64f8c-06cf-4af9-b153-ee9d2897b768
 Langues d'entrée actuellement supportées et exemples :
     
 | Langue d'entrée | Niveau de support | Démo de traduction | Démo de doublage |
-    |----------------|-------------------|--------------------|------------------|
-    | Anglais | 🤩 | [Anglais vers chinois](https://github.com/user-attachments/assets/127373bb-c152-4b7a-8d9d-e586b2c62b4b) | À venir |
-    | Russe | 😊 | [Russe vers chinois](https://github.com/user-attachments/assets/25264b5b-6931-4d39-948c-5a1e4ce42fa7) | À venir |
-    | Français | 🤩 | [Français vers japonais](https://github.com/user-attachments/assets/3ce068c7-9854-4c72-ae77-f2484c7c6630) | À venir |
-    | Allemand | 🤩 | [Allemand vers chinois](https://github.com/user-attachments/assets/07cb9d21-069e-4725-871d-c4d9701287a3) | À venir |
-    | Italien | 🤩 | [Italien vers chinois](https://github.com/user-attachments/assets/f1f893eb-dad3-4460-aaf6-10cac999195e) | À venir |
-    | Espagnol | 🤩 | [Espagnol vers chinois](https://github.com/user-attachments/assets/c1d28f1c-83d2-4f13-a1a1-859bd6cc3553) | À venir |
-    | Japonais | 😐 | [Japonais vers chinois](https://github.com/user-attachments/assets/856c3398-2da3-4e25-9c36-27ca2d1f68c2) | À venir |
-    | Chinois* | 🤩 | [Chinois vers anglais](https://github.com/user-attachments/assets/48f746fe-96ff-47fd-bd23-59e9202b495c) | [Talk-show du professeur Luo Xiang](https://github.com/user-attachments/assets/85c64f8c-06cf-4af9-b153-ee9d2897b768) |
+|----------------|-------------------|--------------------|------------------|
+| Anglais | 🤩 | [Anglais vers chinois](https://github.com/user-attachments/assets/127373bb-c152-4b7a-8d9d-e586b2c62b4b) | À venir |
+| Russe | 😊 | [Russe vers chinois](https://github.com/user-attachments/assets/25264b5b-6931-4d39-948c-5a1e4ce42fa7) | À venir |
+| Français | 🤩 | [Français vers japonais](https://github.com/user-attachments/assets/3ce068c7-9854-4c72-ae77-f2484c7c6630) | À venir |
+| Allemand | 🤩 | [Allemand vers chinois](https://github.com/user-attachments/assets/07cb9d21-069e-4725-871d-c4d9701287a3) | À venir |
+| Italien | 🤩 | [Italien vers chinois](https://github.com/user-attachments/assets/f1f893eb-dad3-4460-aaf6-10cac999195e) | À venir |
+| Espagnol | 🤩 | [Espagnol vers chinois](https://github.com/user-attachments/assets/c1d28f1c-83d2-4f13-a1a1-859bd6cc3553) | À venir |
+| Japonais | 😐 | [Japonais vers chinois](https://github.com/user-attachments/assets/856c3398-2da3-4e25-9c36-27ca2d1f68c2) | À venir |
+| Chinois* | 🤩 | [Chinois vers anglais](https://github.com/user-attachments/assets/48f746fe-96ff-47fd-bd23-59e9202b495c) | [Talk-show du professeur Luo Xiang](https://github.com/user-attachments/assets/85c64f8c-06cf-4af9-b153-ee9d2897b768) |
     > *Le chinois nécessite une configuration séparée du modèle whisperX, voir l'installation à partir du code source
     
 Le support des langues de traduction couvre toutes les langues gérées par le grand modèle linguistique, tandis que le support des langues pour le doublage dépend de la méthode TTS choisie.
